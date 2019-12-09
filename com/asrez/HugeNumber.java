@@ -115,6 +115,36 @@ public class HugeNumber {
 	}
 
 	//Subtract -
+	public void subtract(HugeNumber input) {
+		if(input.array.size() > array.size()) {
+			System.err.println("Error: input of subtract is larger from your number!");
+			return;
+		}
+		for(int i=0;i<input.array.size(); i++) {
+			int result=(int)array.get(i) - (int)input.array.get(i);
+			array.set(i, result);
+			if(result < 0) {
+				array.set(i, 9 - result -1);
+				array.set(i+1, array.get(i+1) - 1);
+			}
+			// for(int j=0;array.get(i+j) >= 10;j++) {
+			// 	array.set(i+j, 0);
+			// 	if(i+j+1 >= array.size()) {
+			// 		array.add(1);
+			// 	}
+			// 	else {
+			// 		array.set(i+j+1, array.get(i+j+1) + 1);
+			// 	}
+			// }
+		}
+		for(int i=array.size()-1;i >= 0; i--) {
+			if(array.get(i) != 0) {
+				break;
+			}
+			array.remove(i);
+		}
+	}
+
 	//Multiplie *
 	//Divide /
 	//Remainder %
@@ -128,6 +158,8 @@ public class HugeNumber {
 		// test.add(new HugeNumber("110"));
 		// test.print(false);
 		test.add(new HugeNumber("50000"));
+		test=new HugeNumber(96);//69
+		test.subtract(new HugeNumber("95"));
 		test.print(false);
 	}
 }
