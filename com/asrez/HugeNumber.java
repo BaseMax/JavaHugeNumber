@@ -215,21 +215,11 @@ public class HugeNumber {
 	}
 
 	public void modulus(HugeNumber input) {
-		// print();
 		HugeNumber temp=new HugeNumber(array);
 		divide(input);
-		// print();
-
-		HugeNumber answer=new HugeNumber(array);
-		answer.multiplie(input);
-		answer.print();
-
-		// array=answer.array;
-		temp.subtract(answer);
-		temp.print();
-
+		multiplie(input);
+		temp.subtract(this);
 		array=temp.array;
-		// print();
 	}
 
 
@@ -278,23 +268,23 @@ public class HugeNumber {
 		// test.print(false);
 		// test.divide(125);
 		// test.divide(16);//20091
-		// test.modulus(31711);//20091
+		test.modulus(31711);//20091
+		test.print(false);
+
+		// test=new HugeNumber(321456);
+		// test.subtract(317110);
 		// test.print(false);
 
-		test=new HugeNumber(321456);
-		test.subtract(317110);
-		test.print(false);
+		// test=new HugeNumber(60);
+		// test.subtract(59);
+		// test.print(false);
 
-		test=new HugeNumber(60);
-		test.subtract(59);
-		test.print(false);
+		// test=new HugeNumber(60);
+		// test.subtract(60);
+		// test.print(false);
 
-		test=new HugeNumber(60);
-		test.subtract(60);
-		test.print(false);
-
-		test=new HugeNumber(60);
-		test.multiplie(0);
-		test.print(false);
+		// test=new HugeNumber(60);
+		// test.multiplie(0);
+		// test.print(false);
 	}
 }
