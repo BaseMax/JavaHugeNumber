@@ -1,5 +1,16 @@
 package com.asrez;
-
+/**
+ *
+ * @Name : JavaHugeNumber
+ * @File : com/asrez/JavaHugeNumber.java
+ * @Version : 1.0
+ * @Programmer : Max
+ * @Date : 2019-12-08, 2019-12-10
+ * @Released under : https://github.com/BaseMax/JavaHugeNumber/blob/master/LICENSE
+ * @Repository : https://github.com/BaseMax/JavaHugeNumber
+ * @Reference : https://github.com/BaseMax/JavaHugeNumber
+ *
+ **/
 import org.omg.CORBA.INTERNAL;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import java.util.ArrayList;
