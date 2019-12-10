@@ -8,11 +8,12 @@ Big and Huge Number/Integer class implementation with supporting arithmetic oper
 
 ### Features
 
-- Addition
-- Subtraction
-- Multiplication
-- Division
-- Modulus
+- No length limit
+- Addition Operator
+- Subtraction Operator
+- Multiplication Operator
+- Division Operator
+- Modulus Operator
 
 ## Java Huge Number
 
@@ -20,6 +21,7 @@ Big and Huge Number/Integer class implementation with supporting arithmetic oper
 
 - [ ] Supports negative numbers
 - [ ] Supports decimal numbers
+- [ ] Improve
 
 ## Java Huge Decimal
 
