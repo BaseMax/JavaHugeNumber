@@ -170,84 +170,25 @@ public class HugeNumber {
 		divide(new HugeNumber(input));
 	}
 
-	static String test_div(String input, int divisor) {
-		String ans = "";
-		int number = 0;
-		char []num = input.toCharArray();
-		int temp = num[number] - '0';
-		while(temp < divisor) 
-			temp = temp * 10 + (num[++number] - '0');
-		number +=1;
-		while(num.length > number) {
-			ans += (temp / divisor);
-			temp = (temp % divisor) * 10 + num[number++] - '0';
-		}
-		if(ans.length() == 0) 
-			return "0";
-		return ans;
-	}
-
 	public void divide(HugeNumber input) {
-		// 960 ÷ 6 = 160
-		if(input.array.size() > array.size()) {
-			System.err.println("Error: input of divide is larger from your number!");
-			return;
-		}
-		HugeNumber result=new HugeNumber(0);
-		for(int i=array.size()-1;i >= 0;i--) {
-			for(int k=input.array.size()-1;k >= 0;k--) {
-				int index1=i;
-				int index2=k-input.array.size()+2;
-				int res=(array.get(i) * (int)Math.pow(10, index1)) * (input.array.get(k) * (int)Math.pow(10, index2));
-				result.add(res);
-			}
-		}
-		array=result.array;
-	}
-	//Remainder %
-
-	public String test_div_test(int divisor) {
-		int[] array={1,2,4,8,1,6,3,2,6,4,1,2,8,2,5,6,5,1,2};
-		String result = "";
-		int number = 0;
-		int temp = array[number];
-		while(temp < divisor)
-			temp = temp * 10 + (array[++number]);
-		number++;
-		while(array.length > number) {
-			result += (temp / divisor);
-			temp = (temp % divisor) * 10 + array[number++];
-		}
-		if(result.length() == 0) 
-			return "0";
-		return result;
-	}
-
-	public String test_div_test_final(int divisor) {
-		// int number = 0;
+		int divisor=Integer.parseInt(input.result());
 		int number = array.size()-1;
-		// System.out.println("#1:getIndex: " + number);
 		int temp = array.get(number);
 		while(temp < divisor) {
-			// number++;
 			number--;
-			// System.out.println("#2:getIndex: " + number);
 			temp = temp * 10 + (array.get(number));
 		}
-		// number++;
 		number--;
 		String result = "";
-		// while(array.size() > number) {
 		while(number >= 0) {
 			result += (temp / divisor);
-			// System.out.println("#3:getIndex: " + number);
 			temp = (temp % divisor) * 10 + array.get(number);
-			// number++;
 			number--;
 		}
 		if(result.length() == 0) 
-			return "0";
-		return result;
+			result="0";
+		HugeNumber answer=new HugeNumber(result);
+		array=answer.array;
 	}
 
 	public static void main(String arguments[]) {
@@ -292,8 +233,7 @@ public class HugeNumber {
 		test=new HugeNumber("1248163264128256512");
 		// test.multiplie(new HugeNumber("600"));
 		// test.print(false);
-		// System.out.println(longDivision("1564", 60));
-		System.out.println(test.longDivision(125));
-		System.out.println(test.longDivisionTest(125));
+		test.divide(125);
+		test.print(false);
 	}
 }
