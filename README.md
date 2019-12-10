@@ -92,6 +92,13 @@ test.multiplie(0);
 test.print(false);
 ```
 
+### Build
+
+```
+javac com/asrez/HugeNumber.java
+java com.asrez.HugeNumber
+```
+
 ---------
 
 # Max Base
