@@ -148,44 +148,18 @@ public class HugeNumber {
 	}
 
 	public void multiplie(HugeNumber input) {
-		// 6*6=36<>63
-		// 69*6=414<>96*6=414
-		// Why: We did used power operation only for `array` variable...
 		if(input.array.size() > array.size()) {
 			ArrayList<Integer> temp1=array;
-			ArrayList<Integer> temp2=input.array;
 			array=input.array;
 			input.array=temp1;
-			// input.array=array;
-			// array=test.array;
-			// input.array=temp;
-			// input=test;
 		}
 		HugeNumber result=new HugeNumber(0);
-		// for(int i=0;i<input.array.size(); i++) {
 		for(int i=array.size()-1;i >= 0; i--) {
-			// System.out.println("ItemTest: "+ array.get(i));
-			// for(int k=0; k < input.array.size(); k++) {
 			for(int k=input.array.size()-1; k >= 0; k--) {
 				int index1=i;
 				int index2=k-input.array.size()+2;
-				// System.out.println(( array.get(i) * (int)Math.pow(10, index1)) +" / " + ( input.array.get(k) * (int)Math.pow(10, index2)));
-				// System.out.println(array.get(i) +" / " + ( input.array.get(k) * (int)Math.pow(10, k)));
-				// System.out.println("Item: "+ array.get(i) + " / " + ( input.array.get(k) * 1));
 				int res=(array.get(i) * (int)Math.pow(10, index1)) * (input.array.get(k) * (int)Math.pow(10, index2));
-				// System.out.println("--->"+res);
 				result.add(res);
-				// int result=input.array.get(i) * (array.get(k) * 1);
-				// for(int j=0;result%10 != 0; j++) {
-				// 	System.out.println(result%10);
-				// 	// if(i+j >= array.size()) {
-				// 	// 	array.add(result%10);
-				// 	// }
-				// 	// else {
-				// 	// 	array.set(i+j, result%10);
-				// 	// }
-				// 	result/=10;
-				// }
 			}
 		}
 		array=result.array;
