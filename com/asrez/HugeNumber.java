@@ -28,8 +28,16 @@ public class HugeNumber {
 		}
 	}
 
-	HugeNumber(HugeNumber input) {
+	HugeNumber(final HugeNumber input) {
 		this.array=input.array;
+	}
+
+	HugeNumber() {
+		array=new ArrayList<Integer>();
+	}
+
+	HugeNumber(final ArrayList<Integer> array) {
+		this.array=array;
 	}
 
 	HugeNumber(int input) {
@@ -91,7 +99,8 @@ public class HugeNumber {
 		return result();
 	}
 
-	//Add +
+	// Addition
+	// Add +
 	public void add(Integer input) {
 		add(new HugeNumber(input));
 	}
@@ -116,7 +125,8 @@ public class HugeNumber {
 		}
 	}
 
-	//Subtract -
+	// Subtraction
+	// Subtract -
 	public void subtract(Integer input) {
 		subtract(new HugeNumber(input));
 	}
@@ -130,7 +140,7 @@ public class HugeNumber {
 			int result=(int)array.get(i) - (int)input.array.get(i);
 			array.set(i, result);
 			if(result < 0) {
-				array.set(i, 9 - result -1);
+				array.set(i, 10+result);
 				array.set(i+1, array.get(i+1) - 1);
 			}
 		}
@@ -140,9 +150,13 @@ public class HugeNumber {
 			}
 			array.remove(i);
 		}
+		if(array.isEmpty()) {
+			array.add(0);
+		}
 	}
 
-	//Multiplie *
+	// Multiplication
+	// Multiplie *
 	public void multiplie(Integer input) {
 		multiplie(new HugeNumber(input));
 	}
@@ -153,7 +167,7 @@ public class HugeNumber {
 			array=input.array;
 			input.array=temp1;
 		}
-		HugeNumber result=new HugeNumber(0);
+		HugeNumber result=new HugeNumber();
 		for(int i=array.size()-1;i >= 0;i--) {
 			for(int k=input.array.size()-1;k >= 0;k--) {
 				int index1=i;
@@ -163,14 +177,19 @@ public class HugeNumber {
 			}
 		}
 		array=result.array;
+		if(array.isEmpty()) {
+			array.add(0);
+		}
 	}
 
-	//Divide /
+	// Division
+	// Divide /
 	public void divide(Integer input) {
 		divide(new HugeNumber(input));
 	}
 
 	public void divide(HugeNumber input) {
+		String result = "";
 		int divisor=Integer.parseInt(input.result());
 		int number = array.size()-1;
 		int temp = array.get(number);
@@ -179,17 +198,40 @@ public class HugeNumber {
 			temp = temp * 10 + (array.get(number));
 		}
 		number--;
-		String result = "";
-		while(number >= 0) {
+		while(number >= -1) {
 			result += (temp / divisor);
-			temp = (temp % divisor) * 10 + array.get(number);
-			number--;
+			int index=number--;
+			if(index > -1) {
+				temp = (temp % divisor) * 10 + array.get(index);
+			}
 		}
-		if(result.length() == 0) 
-			result="0";
 		HugeNumber answer=new HugeNumber(result);
 		array=answer.array;
 	}
+
+	// Modulus
+	public void modulus(Integer input) {
+		modulus(new HugeNumber(input));
+	}
+
+	public void modulus(HugeNumber input) {
+		// print();
+		HugeNumber temp=new HugeNumber(array);
+		divide(input);
+		// print();
+
+		HugeNumber answer=new HugeNumber(array);
+		answer.multiplie(input);
+		answer.print();
+
+		// array=answer.array;
+		temp.subtract(answer);
+		temp.print();
+
+		array=temp.array;
+		// print();
+	}
+
 
 	public static void main(String arguments[]) {
 		HugeNumber test;
@@ -231,9 +273,28 @@ public class HugeNumber {
 		test=new HugeNumber("8750");
 		test=new HugeNumber("0578");
 		test=new HugeNumber("1248163264128256512");
+		test=new HugeNumber("321456");
 		// test.multiplie(new HugeNumber("600"));
 		// test.print(false);
-		test.divide(125);
+		// test.divide(125);
+		// test.divide(16);//20091
+		// test.modulus(31711);//20091
+		// test.print(false);
+
+		test=new HugeNumber(321456);
+		test.subtract(317110);
+		test.print(false);
+
+		test=new HugeNumber(60);
+		test.subtract(59);
+		test.print(false);
+
+		test=new HugeNumber(60);
+		test.subtract(60);
+		test.print(false);
+
+		test=new HugeNumber(60);
+		test.multiplie(0);
 		test.print(false);
 	}
 }
