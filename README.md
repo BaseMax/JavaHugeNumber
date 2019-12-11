@@ -2,7 +2,7 @@
 
 # Java Huge Number
 
-Big and Huge Number/Integer class implementation with supporting arithmetic operations + * / %.
+Big and Huge Number/Integer class implementation with supporting arithmetic operations + - * / %.
 
 ## Java Big Number
 
@@ -14,14 +14,6 @@ Big and Huge Number/Integer class implementation with supporting arithmetic oper
 - Multiplication Operator
 - Division Operator
 - Modulus Operator
-
-## Java Huge Number
-
-### TODO
-
-- [ ] Supports negative numbers
-- [ ] Supports decimal numbers
-- [ ] Improve
 
 ## Java Huge Decimal
 
@@ -91,13 +83,55 @@ test=new HugeNumber(60);
 test.multiplie(0);
 test.print(false);
 ```
+### Structure
+
+```java
+HugeNumber(String input);
+HugeNumber(final HugeNumber input);
+HugeNumber();
+HugeNumber(final ArrayList<Integer> array);
+HugeNumber(int input);
+
+public static int getLength(int input);
+public int getLength();
+public ArrayList getArray();
+
+public void print();
+public void print(boolean split);
+public String result();
+
+public void add(Integer input);
+public void add(HugeNumber input);
+
+public void subtract(Integer input);
+public void subtract(HugeNumber input);
+
+public void multiplie(Integer input);
+public void multiplie(HugeNumber input);
+
+public void divide(Integer input);
+public void divide(HugeNumber input);
+
+public void modulus(Integer input);
+public void modulus(HugeNumber input);
+
+public void clear();
+```
 
 ### Build
 
-```
+```console
 javac com/asrez/HugeNumber.java
 java com.asrez.HugeNumber
 ```
+
+## Java Huge Number
+
+### TODO
+
+- [ ] Supports negative numbers
+- [ ] Supports decimal numbers
+- [ ] Improve
 
 ---------
 
