@@ -11,8 +11,6 @@ package com.asrez;
  * @Reference : https://github.com/BaseMax/JavaHugeNumber
  *
  **/
-import org.omg.CORBA.INTERNAL;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import java.util.ArrayList;
 
 public class HugeNumber {
