@@ -82,7 +82,17 @@ test.print(false);
 test=new HugeNumber(60);
 test.multiplie(0);
 test.print(false);
+
+test=new HugeNumber("8750");
+test=new HugeNumber("0578");
+test=new HugeNumber("1248163264128256512");
+test=new HugeNumber("321456");
+test.modulus(31711);
+test.setIndex(0, 9);
+test.setLastIndex(0, 8);
+test.print(false);
 ```
+
 ### Structure
 
 ```java
