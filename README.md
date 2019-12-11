@@ -85,7 +85,7 @@ test.print(false);
 ```
 ### Structure
 
-```
+```java
 HugeNumber(String input);
 HugeNumber(final HugeNumber input);
 HugeNumber();
