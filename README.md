@@ -2,7 +2,7 @@
 
 # Java Huge Number
 
-Big and Huge Number/Integer class implementation with supporting arithmetic operations + * / %.
+Big and Huge Number/Integer class implementation with supporting arithmetic operations + - * / %.
 
 ## Java Big Number
 
