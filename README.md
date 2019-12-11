@@ -120,7 +120,7 @@ public void clear();
 
 ### Build
 
-```
+```console
 javac com/asrez/HugeNumber.java
 java com.asrez.HugeNumber
 ```
