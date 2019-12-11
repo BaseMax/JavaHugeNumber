@@ -233,6 +233,53 @@ public class HugeNumber {
 		array=temp.array;
 	}
 
+	public boolean setLastIndex(Integer index, Integer input) {
+		if(array.size()-1 >= index) {
+			if(index >= array.size()) {
+				array.add(input);
+			}
+			else {
+				array.set(index, input);
+			}
+			return true;
+		}
+		return false;
+	}
+
+	public boolean setIndex(Integer index, Integer input) {
+		int size=array.size();
+		// 0 .. 9
+		// 9 - 0 = 9
+		index=(size-1)-index;
+		if(size-1 >= index) {
+			if(index >= size) {
+				array.add(input);
+			}
+			else {
+				array.set(index, input);
+			}
+			return true;
+		}
+		return false;
+	}
+
+	public Integer getLastIndex(Integer index) {
+		if(array.size()-1 >= index) {
+			return array.get(index);
+		}
+		return -1;// false
+	}
+
+	public Integer getIndex(Integer index) {
+		int size=array.size();
+		// 0 .. 9
+		// 9 - 0 = 9
+		index=(size-1)-index;
+		if(size-1 >= index) {
+			return array.get(index);
+		}
+		return -1;// false
+	}
 
 	public static void main(String arguments[]) {
 		HugeNumber test;
@@ -279,7 +326,9 @@ public class HugeNumber {
 		// test.print(false);
 		// test.divide(125);
 		// test.divide(16);//20091
-		test.modulus(31711);//20091
+		test.modulus(31711);
+		test.setIndex(0, 9);
+		test.setLastIndex(0, 8);
 		test.print(false);
 
 		// test=new HugeNumber(321456);
