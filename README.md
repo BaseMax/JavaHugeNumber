@@ -126,8 +126,8 @@ public void modulus(Integer input);
 public void modulus(HugeNumber input);
 
 public void clear();
-public void setIndex(Integer index, Integer input);
-public void setLastIndex(Integer index, Integer input);
+public boolean setIndex(Integer index, Integer input);
+public boolean setLastIndex(Integer index, Integer input);
 public Integer getIndex(Integer index);
 public Integer getLastIndex(Integer index);
 ```
