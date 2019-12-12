@@ -93,6 +93,21 @@ test.setLastIndex(0, 8);
 test.print(false);
 ```
 
+### Build
+
+```console
+javac com/asrez/HugeNumber.java
+java com.asrez.HugeNumber
+```
+
+## Java Huge Number
+
+### TODO
+
+- [ ] Supports negative numbers
+- [ ] Supports decimal numbers
+- [ ] Improve
+
 ### Structure
 
 ```java
@@ -131,21 +146,6 @@ public boolean setLastIndex(Integer index, Integer input);
 public Integer getIndex(Integer index);
 public Integer getLastIndex(Integer index);
 ```
-
-### Build
-
-```console
-javac com/asrez/HugeNumber.java
-java com.asrez.HugeNumber
-```
-
-## Java Huge Number
-
-### TODO
-
-- [ ] Supports negative numbers
-- [ ] Supports decimal numbers
-- [ ] Improve
 
 ---------
 
